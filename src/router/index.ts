@@ -23,7 +23,6 @@ const routes: Array<RouteRecordRaw> = [
         path: ':bookId',
         name: 'Detail',
         component: Detail,
-        props:true
       }
     ]
   },
