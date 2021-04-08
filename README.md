@@ -6,22 +6,29 @@
 ##### 方法一：直接開啟此　github page <a href="https://burton85.github.io/BookStore/">連結</a>
     
 ##### 方法二：下載我的git檔案並在本地運行
+    
+    1.下載 git 檔案
+    
     ```
     $ git clone https://github.com/Burton85/BookStore.git
     ```
+    2.進入資料夾
     
     ```
     $ cd bookstore
     ```
+    3.下載必要依賴
     
     ```
     $ npm install
     ```
+    4.運行專案
     
     ```
     $ npm run server
     ```
-    打開 http://localhost:8080 或其他端口
+    
+    5.打開 http://localhost:8080 或其他端口
 
     
 ## 2.  專案的架構、邏輯說明：
