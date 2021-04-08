@@ -1,5 +1,5 @@
 <template>
-    <div class="book-list mt-24">
+    <div class="book-list mt-24 hidden sm:block">
         <div class="h-100 w-full lg:w-8/12 flex flex-col m-auto flex-nowrap md:flex-row">
             <transition-group name="fade">
                 <book-card
@@ -46,6 +46,19 @@
                     <path d="M18 15l-6-6l-6 6h12" transform="rotate(90 12 12)" />
                 </svg>
             </button>
+        </div>
+    </div>
+    <div class="book-list mt-24 block sm:hidden">
+        <div class="h-100 w-full lg:w-8/12 flex flex-col m-auto flex-nowrap md:flex-row">
+            <transition-group name="fade">
+                <book-card
+                    v-for="book in rawList"
+                    :key="book.id"
+                    :book="book"
+                    @click="clickBookHandler(book.id)"
+                    :selected-id="selectId"
+                ></book-card>
+            </transition-group>
         </div>
     </div>
 </template>

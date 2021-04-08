@@ -16,9 +16,15 @@ input[type='number'] {
 }
 html,
 body {
+    padding: 0.5rem;
     background-color: papayawhip;
 }
-
+.inset-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 /*transition*/
 .fade-enter-active,
 .fade-leave-active {
@@ -31,4 +37,15 @@ body {
 }
 .fade-leave-to {
     display: none;
+}
+
+.rise-enter-active,
+.rise-leave-active {
+    transition: all 1s ease;
+}
+
+.rise-enter-from,
+.rise-leave-to {
+    opacity: 0;
+    margin-top: 1%;
 }
