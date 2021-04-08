@@ -1,8 +1,10 @@
 import { ref,watch,computed } from 'vue';
 import {dataGetter,dataPatcher} from '../plugin/dataController'
 import { useRoute } from 'vue-router'
+import useAlert from '@/composition/useAlert';
 
 export default function() {
+    const {msg,msgtype,showAlert}=useAlert()
     const route = useRoute()
     
     const rawBookDetail=ref({})
@@ -32,8 +34,14 @@ export default function() {
     const id = computed(() => {//不能直接監聽route 會導致洩漏
         return route.params.bookId
      })
+     
+    watch(id, ()=>{
+        getBookDetail()
+    })
+
+
+    
     function isCountEqual(object1:any, object2:any) {
-        console.log(object1,object2)
       return object1.count === object2.count;
     }
     function isPriceEqual(object1:any, object2:any) {
@@ -41,24 +49,23 @@ export default function() {
     }
     const submitData=()=>{
         if(isCountEqual(rawBookDetail.value,bookDetail.value)&&isPriceEqual(rawBookDetail.value,bookDetail.value)){
-            alert('請修改後再提交')
+            showAlert('請修改後再提交','warn')
         }else{
-            console.log(1)
             dataPatcher.updateData("https://fe-interview-api.unnotech.com/profile/"+id.value,{price:bookDetail.value.price,count:bookDetail.value.count})
             .then(res=>{
                 if(res.status==200){
-                    alert('修改成功')
+                    showAlert('修改成功','suss')
                 }else{
-                    alert('網路異常')
+                    showAlert('網路異常','fail')
                 }
             })
         }
     }
-    watch(id, ()=>{
-        getBookDetail()
-    })
+
     getBookDetail()
     return {
+        msg,
+        msgtype,
         addCount,
         reduceCount,
         addPrice,
