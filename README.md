@@ -55,18 +55,18 @@
     但打包時卻出現 tailwind css 部分失效的狀況，無法套用到 SFC 檔案中的 class name，
     後來在 tailwind.config.js 中找到問題，需要調整 purge，
     預設如下無法找到正確檔案
-    ```
+```
     purge: [
       '@/**/*.html',
       '@/**/*.vue',
     ],
-    ```
+```
     後更改為
-    ```
+```
     purge: [
       './src/**/*.html',
       './src/**/*.vue',
     ],
-    ```
+```
     打包完即可順利運行!
     
