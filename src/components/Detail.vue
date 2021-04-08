@@ -1,15 +1,15 @@
 <template>
     <form
-        class="detail bg-gray-200 bg-opacity-75 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-6/12 m-auto my-24 flex border-4 border-gray-500 border-opacity-50"
+        class="detail relative bg-gray-200 bg-opacity-75 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full sm:w-6/12 m-auto my-24 flex border-4 border-gray-500 border-opacity-50"
     >
         <div class="input-container w-1/2">
-            <div class="md:flex md:items-center my-6">
-                <div class="md:w-1/4">
-                    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+            <div class="sm:flex sm:items-center my-6">
+                <div class="w-1/4 sm:w-full">
+                    <label class="block text-gray-500 font-bold text-right mb-1 sm:mb-0 sm:pr-4" for="inline-full-name">
                         價格
                     </label>
                 </div>
-                <button @click="reducePrice()" class="md:w-1/8 focus:outline-none hover:text-yellow-500">
+                <button @click="reducePrice()" class="sm:w-1/8 focus:outline-none hover:text-yellow-500 ">
                     <svg
                         class="w-6 h-6"
                         fill="none"
@@ -26,11 +26,11 @@
                     </svg>
                 </button>
                 <input
-                    class="md:w-2/4 bg-gray-300 appearance-none rounded w-full py-2 mx-8 text-center text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow-500"
+                    class="w-1/4 sm:w-2/4 bg-gray-300 appearance-none rounded py-2 mx-8 text-center text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow-500"
                     type="number"
                     :placeholder="bookDetail.price"
                 />
-                <button @click="addPrice()" class="md:w-1/8 focus:outline-none hover:text-yellow-500">
+                <button @click="addPrice()" class="sm:w-1/8 focus:outline-none hover:text-yellow-500">
                     <svg
                         class="w-6 h-6"
                         fill="none"
@@ -47,13 +47,13 @@
                     </svg>
                 </button>
             </div>
-            <div class="md:flex md:items-center my-6">
-                <div class="md:w-1/4">
-                    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+            <div class="sm:flex sm:items-center my-6">
+                <div class="w-1/4 sm:w-full">
+                    <label class="block text-gray-500 font-bold text-right mb-1 sm:mb-0 sm:pr-4" for="inline-full-name">
                         數量
                     </label>
                 </div>
-                <button @click="reduceCount()" class="md:w-1/8 focus:outline-none hover:text-yellow-500">
+                <button @click="reduceCount()" class="sm:w-1/8 focus:outline-none hover:text-yellow-500">
                     <svg
                         class="w-6 h-6"
                         fill="none"
@@ -70,11 +70,11 @@
                     </svg>
                 </button>
                 <input
-                    class="md:w-2/4 bg-gray-300 appearance-none rounded w-full py-2 mx-8 text-center text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow-500"
+                    class="w-1/4 sm:w-2/4 bg-gray-300 appearance-none rounded py-2 mx-8 text-center text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow-500"
                     type="number"
                     :placeholder="bookDetail.count"
                 />
-                <button @click="addCount()" class="md:w-1/8 focus:outline-none hover:text-yellow-500">
+                <button @click="addCount()" class="sm:w-1/8 focus:outline-none hover:text-yellow-500">
                     <svg
                         class="w-6 h-6"
                         fill="none"
@@ -93,11 +93,11 @@
             </div>
         </div>
 
-        <div class="submit-button md:flex md:items-center w-1/2">
-            <div class="md:w-1/3"></div>
-            <div class="md:w-2/3">
+        <div class="submit-button sm:flex sm:items-center w-1/2">
+            <div class="sm:w-1/3 h-1/2 sm:h-full"></div>
+            <div class="sm:w-2/3 h-1/2 sm:h-full flex justify-center items-center">
                 <button
-                    class="shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    class="h-10 shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                     type="button"
                     @click="submitData()"
                 >
@@ -105,8 +105,8 @@
                 </button>
             </div>
         </div>
+        <my-alert :msg="msg" :msgtype="msgtype"></my-alert>
     </form>
-    <my-alert :msg="msg" :msgtype="msgtype"></my-alert>
 
 </template>
 <script lang="ts">
