@@ -12,16 +12,19 @@
     ```
     $ git clone https://github.com/Burton85/BookStore.git
     ```
+    
     2.進入資料夾
     
     ```
     $ cd bookstore
     ```
+    
     3.下載必要依賴
     
     ```
     $ npm install
     ```
+    
     4.運行專案
     
     ```
