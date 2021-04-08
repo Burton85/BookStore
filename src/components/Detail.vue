@@ -1,6 +1,6 @@
 <template>
     <form
-        class="detail bg-gray-200 bg-opacity-75 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-6/12 m-auto my-10 flex border-4 border-gray-500 border-opacity-50"
+        class="detail bg-gray-200 bg-opacity-75 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-6/12 m-auto my-24 flex border-4 border-gray-500 border-opacity-50"
     >
         <div class="input-container w-1/2">
             <div class="md:flex md:items-center my-6">
@@ -106,13 +106,19 @@
             </div>
         </div>
     </form>
+    <my-alert :msg="msg" :msgtype="msgtype"></my-alert>
+
 </template>
 <script lang="ts">
 import useDetail from '@/composition/useDetail';
+import MyAlert from '@/components/MyAlert.vue';
 
 export default {
     setup(props: any) {
         return useDetail();
     },
+    components:{
+        MyAlert
+    }
 };
 </script>
