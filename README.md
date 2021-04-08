@@ -9,27 +9,27 @@
     
     1.下載 git 檔案
     
-    ```
+```
     $ git clone https://github.com/Burton85/BookStore.git
-    ```
+```
     
     2.進入資料夾
     
-    ```
+```
     $ cd bookstore
-    ```
+```
     
     3.下載必要依賴
     
-    ```
+```
     $ npm install
-    ```
+ ```
     
     4.運行專案
     
-    ```
+```
     $ npm run server
-    ```
+```
     
     5.打開 http://localhost:8080 或其他端口
 
