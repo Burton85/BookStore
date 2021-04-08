@@ -13,6 +13,9 @@ export default function() {
     const clickBookHandler = (id:string) => {//選中效果
         selectId.value=id+''
         router.push('/books/'+id)
+        
+        let app = document.getElementById('app')||{scrollHeight:0}
+        window.scroll(0,app.scrollHeight);
     };
     const getBookList=()=>{
         dataGetter.getData('https://fe-interview-api.unnotech.com/books').then(value=>{//獲取book list資料            
@@ -52,6 +55,7 @@ export default function() {
         nextBook,
         pervBook,
         filterList,
+        rawList,
         listStatus,
         selectId,
         clickBookHandler
