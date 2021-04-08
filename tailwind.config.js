@@ -3,7 +3,10 @@ module.exports = {
         // removeDeprecatedGapUtilities: true,
         // purgeLayersByDefault: true,
     },
-    purge: ['@/**/*.html', '@/**/*.vue'],
+    purge: [
+      './src/**/*.html',
+      './src/**/*.vue',
+    ],
     theme: {
         extend: {},
     },
