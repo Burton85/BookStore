@@ -1,6 +1,6 @@
 <template>
     <div class="book-list mt-24">
-        <div class="h-100 w-8/12 flex flex-col m-auto flex-nowrap md:flex-row">
+        <div class="h-100 w-full lg:w-8/12 flex flex-col m-auto flex-nowrap md:flex-row">
             <transition-group name="fade">
                 <book-card
                     v-for="book in filterList"
