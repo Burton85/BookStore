@@ -9,12 +9,15 @@
     ```
     $ git clone https://github.com/Burton85/BookStore.git
     ```
+    
     ```
     $ cd bookstore
     ```
+    
     ```
     $ npm install
     ```
+    
     ```
     $ npm run server
     ```
