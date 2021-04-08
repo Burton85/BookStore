@@ -3,9 +3,9 @@
 
 1.  如何執行這個專案：
 
-    ###方法一：直接開啟此　github page <a href="https://burton85.github.io/BookStore/">連結</a>
+###方法一：直接開啟此　github page <a href="https://burton85.github.io/BookStore/">連結</a>
     
-    ###方法二：下載我的git檔案並在本地運行
+###方法二：下載我的git檔案並在本地運行
     ```
     $ git clone https://github.com/Burton85/BookStore.git
     ```
