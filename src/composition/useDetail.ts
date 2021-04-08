@@ -13,6 +13,10 @@ export default function() {
         dataGetter.getData('https://fe-interview-api.unnotech.com/profile/'+route.params.bookId).then(value=>{//獲取book detail資料            
             rawBookDetail.value={price:value.price,count:value.count}//將原始數據淺拷貝出來
             bookDetail.value=value
+        }).catch(err=>{
+            rawBookDetail.value={price:0,count:0}
+            bookDetail.value={price:0,count:0}
+            showAlert('查無資料','fail')
         })
     }
     const addPrice=()=>{
@@ -40,7 +44,7 @@ export default function() {
     })
 
 
-    
+
     function isCountEqual(object1:any, object2:any) {
       return object1.count === object2.count;
     }
@@ -58,6 +62,10 @@ export default function() {
                 }else{
                     showAlert('網路異常','fail')
                 }
+            }).catch(err=>{
+                rawBookDetail.value={price:0,count:0}
+                bookDetail.value={price:0,count:0}
+                showAlert('查無資料','fail')
             })
         }
     }
